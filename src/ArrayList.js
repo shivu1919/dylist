@@ -7,11 +7,7 @@ function ArrayList() {
   return (
     <>
         <div>
-          <ol>
-            {fruits.map(x => <li key={x}> {x} </li>)}
-          </ol>
-            
-            
+          {fruits.map(x=><li key={x}>{x}</li>)}
         </div>
     </>
   )
