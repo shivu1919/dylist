@@ -10,11 +10,7 @@ import Counter from './Counter'
 function App() {
   return (
     <>
-    <h1>Count value from class based Component</h1>
-     <Counter />
-
-     <h1>Count value from Functional component</h1>
-     <Count />
+      <ListState />
     </>
   )
 }

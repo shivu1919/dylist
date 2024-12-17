@@ -2,29 +2,38 @@ import React, { useState } from 'react'
 
 function StateList() {
 
-  const[color, setColor] = useState(["black","white"])
+    const[color, setColor] = useState(["Black"])
 
-  function Green(){
-    setColor([...color,"Green"])
-  }
+    function AddColor(){
+        let col = document.getElementById('inp').value
+        if(col!=''){
+            setColor([...color, col])
+            document.getElementById('inp').value=''
+        }
+        else{
+            alert('please enter color name')
+        }
+        
+    }
 
-  function Orange(){
-    setColor([...color, "Orange"])
-  }
-
-  function RemoveItem(){
-
-  }
+    function DeleteItem(){
+        setColor(color.slice(0,-1))
+    }
 
   return (
     <div>
-        <button onClick={Green}>Add Green</button>
-        <button onClick={Orange}>Add Orange</button>
+        <center>
+        <input type='text' id='inp'></input>
         <br />
-        <button onClick={RemoveItem}>Remove Last item</button>
-        {color.map((x,index)=> <li key={index}>{x}</li>)}
+        <button onClick={AddColor}>Add Color</button>
+
+        {color.map(x=> <li>{x}</li>)}
+
+        <button onClick={DeleteItem}>Delete Item</button>
+        </center>
+        
     </div>
   )
 }
 
-export default StateList;
+export default StateList
